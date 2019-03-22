@@ -8,7 +8,11 @@ namespace Diego.Helpers
     {
         public AuthoMapperProfiles()
         {
-           CreateMap<Producto, ProductoToReturnDTO>();
+           CreateMap<Producto, ProductoToReturnDTO>()
+           .ForMember(dest => dest.Clasificacion, opt => {
+                    opt.MapFrom(src => src.Clasificacion.Descripcion);
+                    
+                });
         }
         
     }

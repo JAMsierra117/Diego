@@ -24,7 +24,7 @@ namespace Diego.Controllers.Catalogos
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var datos = await this._context.Productos.ToListAsync();
+            var datos = await this._context.Productos.Include(p => p.Clasificacion).ToListAsync();
             
             var productos = _mapper.Map<IEnumerable<ProductoToReturnDTO>>(datos);
 

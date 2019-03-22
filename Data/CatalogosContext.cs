@@ -21,7 +21,8 @@ namespace Diego.Data
 
             builder.Entity<Producto>()
                 .HasOne(u => u.Clasificacion)
-                .WithMany(u => u.Productos)                
+                .WithMany(u => u.Productos)  
+                .HasForeignKey(u => u.ID_Clasificacion)              
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
