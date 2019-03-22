@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Diego.Data;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 
 namespace Diego
 {
@@ -39,6 +40,7 @@ namespace Diego
                 options.SerializerSettings.ContractResolver = 
                 new Newtonsoft.Json.Serialization.DefaultContractResolver();
             });
+            services.AddAutoMapper();
 
             
         }

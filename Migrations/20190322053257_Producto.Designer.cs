@@ -3,14 +3,16 @@ using Diego.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Diego.Migrations
 {
     [DbContext(typeof(CatalogosContext))]
-    partial class CatalogosContextModelSnapshot : ModelSnapshot
+    [Migration("20190322053257_Producto")]
+    partial class Producto
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +49,7 @@ namespace Diego.Migrations
 
                     b.HasIndex("ID_Clasificacion");
 
-                    b.ToTable("Productos");
+                    b.ToTable("Producto");
                 });
 
             modelBuilder.Entity("Diego.Models.Catalogos.Producto", b =>
